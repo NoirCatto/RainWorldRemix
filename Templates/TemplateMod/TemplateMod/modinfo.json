@@ -1,0 +1,10 @@
+{
+  "id": "AuthorName.ModName",
+  "name": "Mod Name",
+  "version": "1.0.0",
+  "authors": "Author 1, Author 2",
+  "description": "Slugcat likes to zoom",
+  "requirements": [],
+  "requirements_names": [],
+  "checksum_override_version": true
+}
