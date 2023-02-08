@@ -1,4 +1,4 @@
-# TemplateMod /w OptionsInterface
+# TemplateMod /w OptionInterface
 ### References
 Stuff you need to reference in your IDE : <br>
 - Rain World/BepInEx/core: Every .dll file
