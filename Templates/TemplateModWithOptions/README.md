@@ -21,3 +21,6 @@ When writing mods, logging is your best friend.<br>
 
 ### Try-Catch
 It's also a good idea to have a try-catch around RainWorld.Update while writing a mod - but instead of doing it for every mod (and later removing it when shipping it), [you can use one ready for you](https://steamcommunity.com/sharedfiles/filedetails/?id=2927326990)
+
+### Download
+https://github.com/NoirCatto/RainWorldRemix/raw/master/Templates/TemplateModWithOptions/TemplateModWithOptions.zip
