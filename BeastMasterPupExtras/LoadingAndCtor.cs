@@ -14,7 +14,7 @@ public partial class BeastMasterPupExtras
     {
         var text = orig(self);
         text += "SlugcatCharacter<cC>" + self.slugcatCharacter.ToString() + "<cB>";
-        text += "PlayerNumber<cC>" + self.playerNumber.ToString() + "<cB>";
+        // text += "PlayerNumber<cC>" + self.playerNumber.ToString() + "<cB>";
         return text;
     }
 
@@ -31,9 +31,9 @@ public partial class BeastMasterPupExtras
                 case "SlugcatCharacter":
                     self.slugcatCharacter = StringToSlugName(array[1]);
                     break;
-                case "PlayerNumber":
-                    self.playerNumber = int.Parse(array[1]);
-                    break;
+                // case "PlayerNumber":
+                //     self.playerNumber = int.Parse(array[1]);
+                //     break;
             }
         }
     }
