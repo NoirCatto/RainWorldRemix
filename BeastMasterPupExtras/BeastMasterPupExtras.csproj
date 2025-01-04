@@ -63,6 +63,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\REFERENCES\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SlugpupStuff">
+      <HintPath>..\..\REFERENCES CUSTOM\SlugpupStuff.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\REFERENCES\UnityEngine.dll</HintPath>
     </Reference>

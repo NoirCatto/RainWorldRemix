@@ -29,7 +29,6 @@ public partial class BeastMasterPupExtras
         catch (Exception ex)
         {
             Logger.LogError(ex);
-            throw;
         }
     }
     
@@ -97,9 +96,10 @@ public partial class BeastMasterPupExtras
 
             if (considerJumps.Any())
             {
+                var jumpOfInterest = considerJumps.First();
                 if (self.OnVerticalBeam())
                 {
-                    if (self.cat.abstractCreature.pos.y < considerJumps.First()[1].y + 0.5f)
+                    if (self.cat.abstractCreature.pos.y < jumpOfInterest[1].y + 0.5f)
                     {
                         DebugLog($"{self.cat.SlugCatClass} NPC wants to jump, climbing up to jump position!");
                         self.cat.input[0].y = 1;
@@ -110,9 +110,9 @@ public partial class BeastMasterPupExtras
                 DebugLog($"{self.cat.SlugCatClass} NPC attempting to jump!");
                 DebugLog($"Cat Pos: {self.cat.abstractCreature.pos.x}, {self.cat.abstractCreature.pos.y}");
                 DebugLog($"Mother Pos: {mother.abstractCreature.pos.x}, {mother.abstractCreature.pos.y}");
-                DebugLog($"Jump StartPos x: {considerJumps.First()[0].x}, y: {considerJumps.First()[0].y}");
-                DebugLog($"Jump Destination x: {considerJumps.First()[1].x}, y: {considerJumps.First()[1].y}");
-                Jump(self, considerJumps.First()[1]);
+                DebugLog($"Jump StartPos x: {jumpOfInterest[0].x}, y: {jumpOfInterest[0].y}");
+                DebugLog($"Jump Destination x: {jumpOfInterest[1].x}, y: {jumpOfInterest[1].y}");
+                Jump(self, jumpOfInterest[1]);
             }
         }
 

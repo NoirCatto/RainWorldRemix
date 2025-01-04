@@ -14,7 +14,6 @@ public partial class BeastMasterPupExtras
     {
         var text = orig(self);
         text += "SlugcatCharacter<cC>" + self.slugcatCharacter.ToString() + "<cB>";
-        // text += "PlayerNumber<cC>" + self.playerNumber.ToString() + "<cB>";
         return text;
     }
 
@@ -31,9 +30,6 @@ public partial class BeastMasterPupExtras
                 case "SlugcatCharacter":
                     self.slugcatCharacter = StringToSlugName(array[1]);
                     break;
-                // case "PlayerNumber":
-                //     self.playerNumber = int.Parse(array[1]);
-                //     break;
             }
         }
     }
@@ -41,12 +37,12 @@ public partial class BeastMasterPupExtras
     private void AbstractCreatureOnMSCRealizeCustom(On.AbstractCreature.orig_MSCRealizeCustom orig, AbstractCreature self)
     {
         orig(self);
+        if (PupsPlus && self.state is PlayerNPCState npcState && SlugPupHandled(npcState)) return; //PupsPlus already handles this pup
 
         if (self.realizedCreature is Player pl)
         {
             if (self.creatureTemplate.TopAncestor().type == MoreSlugcatsEnums.CreatureTemplateType.SlugNPC)
             {
-
                 pl.SlugCatClass = pl.playerState.slugcatCharacter;
                 pl.slugcatStats.name = pl.playerState.slugcatCharacter;
                 pl.graphicsModule = new PlayerGraphics(pl); //MSC chara fix
@@ -74,20 +70,26 @@ public partial class BeastMasterPupExtras
             
             for (var k = 0; k < 3; k++)
             {
-                c.GotoNext(MoveType.AfterLabel, i => i.MatchLdsfld<MoreSlugcatsEnums.SlugcatStatsName>("Slugpup"));
+                c.GotoNext(MoveType.After, i => i.MatchLdsfld<MoreSlugcatsEnums.SlugcatStatsName>(nameof(MoreSlugcatsEnums.SlugcatStatsName.Slugpup)));
                 c.Emit(OpCodes.Ldarg_0);
-                c.EmitDelegate((PlayerNPCState self) =>
+                c.EmitDelegate((SlugcatStats.Name name, PlayerNPCState self) =>
                 {
-                    //LoggerLog($"IL{k}");
-                    return self.isPup ? MoreSlugcatsEnums.SlugcatStatsName.Slugpup : self.slugcatCharacter;
+                    if (PupsPlus && SlugPupHandled(self)) return name;
+                    return self.isPup ? name : self.slugcatCharacter;
                 });
-                c.Remove();
             }
         }
         catch (Exception ex)
         {
             Logger.LogError(ex);
-            throw;
         }
     }
+
+    #region PupsPlusCompat
+    private bool SlugPupHandled(PlayerNPCState self)
+    {
+        SlugpupStuff.SlugpupCWTs.pupStateCWT.TryGetValue(self, out var pupNPCState);
+        return pupNPCState?.Variant != null;
+    }
+    #endregion
 }

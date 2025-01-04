@@ -35,12 +35,12 @@ public partial class BeastMasterPupExtras : BaseUnityPlugin
         catch (Exception ex)
         {
             Logger.LogError(ex);
-            throw;
         }
     }
     private void OnEnable()
     {
         On.RainWorld.OnModsInit += RainWorldOnOnModsInit;
+        On.RainWorld.PostModsInit += RainWorldOnPostModsInit;
     }
 
     private bool IsInit;
@@ -50,8 +50,7 @@ public partial class BeastMasterPupExtras : BaseUnityPlugin
         try
         {
             if (IsInit) return;
-
-            //Your hooks go here
+            IsInit = true;
 
             On.RainWorldGame.ShutDownProcess += RainWorldGameOnShutDownProcess;
             On.GameSession.ctor += GameSessionOnctor;
@@ -70,12 +69,31 @@ public partial class BeastMasterPupExtras : BaseUnityPlugin
             On.MoreSlugcats.SlugNPCAI.Move += SlugNPCAIOnMove;
             
             MachineConnector.SetRegisteredOI("NoirCatto.BeastMasterPupExtras", Options);
-            IsInit = true;
         }
         catch (Exception ex)
         {
             Logger.LogError(ex);
-            throw;
+        }
+    }
+
+    private bool IsPostInit;
+    private bool PupsPlus;
+    private void RainWorldOnPostModsInit(On.RainWorld.orig_PostModsInit orig, RainWorld self)
+    {
+        orig(self);
+        try
+        {
+            if (IsPostInit) return;
+            IsPostInit = true;
+
+            if (ModManager.ActiveMods.Any(mod => mod.id == "iwantbread.slugpupstuff"))
+            {
+                PupsPlus = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex);
         }
     }
 
@@ -101,7 +119,7 @@ public partial class BeastMasterPupExtras : BaseUnityPlugin
     {
         if (LoggingEnabled)
         {
-            Debug.Log(data);
+            UnityEngine.Debug.Log(data);
         }
     }
 
