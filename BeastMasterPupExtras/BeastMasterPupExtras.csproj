@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <LangVersion>11</LangVersion>
+    <TargetFramework>net481</TargetFramework>
+    <LangVersion>Latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -63,8 +63,14 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\REFERENCES\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>..\..\REFERENCES\Rewired_Core.dll</HintPath>
+    </Reference>
     <Reference Include="SlugpupStuff">
       <HintPath>..\..\REFERENCES CUSTOM\SlugpupStuff.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\REFERENCES\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>..\..\REFERENCES\UnityEngine.dll</HintPath>
@@ -78,9 +84,13 @@
     <Reference Include="UnityEngine.InputLegacyModule">
       <HintPath>..\..\REFERENCES\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\REFERENCES\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cp -T &quot;/home/master/Coding/CSharp/Rain World/RainWorldRemix/BeastMasterPupExtras/obj/Debug/net48/BeastMasterPupExtras.dll&quot; &quot;/home/master/Games/Rain World/RainWorld_Data/StreamingAssets/mods/BeastMasterPupExtras/plugins/BeastMasterPupExtras.dll&quot;" />
+    <Exec Command="cp -T &quot;/home/master/Coding/CSharp/Rain World/RainWorldRemix/BeastMasterPupExtras/obj/Debug/net481/BeastMasterPupExtras.dll&quot; &quot;/home/master/Games/Rain World/RainWorld_Data/StreamingAssets/mods/BeastMasterPupExtras/plugins/BeastMasterPupExtras.dll&quot;" />
+    <Exec Command="cp -T &quot;/home/master/Coding/CSharp/Rain World/RainWorldRemix/BeastMasterPupExtras/obj/Debug/net481/BeastMasterPupExtras.pdb&quot; &quot;/home/master/Games/Rain World/RainWorld_Data/StreamingAssets/mods/BeastMasterPupExtras/plugins/BeastMasterPupExtras.pdb&quot;" />
   </Target>
 
 </Project>
