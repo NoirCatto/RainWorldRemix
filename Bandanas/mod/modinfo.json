@@ -1,0 +1,11 @@
+{
+  "id": "NoirCatto.Bandanas",
+  "name": "Bandanas",
+  "version": "1.0.0",
+  "authors": "NoirCatto",
+  "description": "Colorful Bandanas for everyscug!",
+  "requirements": [],
+  "requirements_names": [],
+  "tags": ["Cosmetics"],
+  "checksum_override_version": true
+}
