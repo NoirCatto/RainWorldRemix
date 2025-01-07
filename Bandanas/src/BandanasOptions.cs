@@ -58,12 +58,10 @@ public class BandanasOptions : OptionInterface
 
         for (var i = 0; i < fullTabs; i++)
         {
-            Logger.LogInfo($"Creating tab: {i}");
             tabs.Add(GenerateOpTab(4, i * 4));
         }
         if (remainder != 0)
         {
-            Logger.LogInfo($"Creating Remainder tab: {remainder}");
             tabs.Add(GenerateOpTab(remainder, fullTabs * 4));
         }
 
