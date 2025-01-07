@@ -95,7 +95,7 @@ public class BandanasOptions : OptionInterface
                 new OpLabel(10f + offset, 490f + vOffset, "Length (default = 5)"),
                 new OpSlider(HeadRagLengthList[plrNumOffset + i], new Vector2(10f + offset, 460f + vOffset), 100),
 
-                new OpLabel(40f + offset, 430f + vOffset, "Raibow"),
+                new OpLabel(40f + offset, 430f + vOffset, "Rainbow"),
                 new OpCheckBox(HeadRagColorRainbowList[plrNumOffset + i], 10f + offset, 430f + vOffset),
 
                 new OpLabel(10f + offset, 400f + vOffset, "Color"),
