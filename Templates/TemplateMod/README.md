@@ -4,8 +4,7 @@ Stuff you need to reference in your IDE : <br>
 - Rain World/BepInEx/core: Every .dll file
 - Rain World/BepInEx/utils: PUBLIC-Assembly-CSharp.dll
 - Rain World/BepInEx/plugins: HOOKS-Assembly-CSharp.dll
-- Rain World/RainWorld_Data/Managed: Assembly-CSharp-firstpass.dll, com.rlabrecque.steamworks.net.dll, UnityEngine.dll, UnityEngine.CoreModule.dll, UnityEngine.InputLegacyModule.dll, UnityEngine.ImageConversionModule.dll,
-GoKit.dll, Newtonsoft.Json.dll
+- Rain World/RainWorld_Data/Managed: Assembly-CSharp-firstpass.dll, UnityEngine.dll, UnityEngine.CoreModule.dll, UnityEngine.InputLegacyModule.dll, UnityEngine.ImageConversionModule.dll,, Newtonsoft.Json.dll, GoKit.dll, Rewired_Core.dll
 
 (Probably won't need all of them for simple modding, but it doesn't hurt to have them all ready.)
 
