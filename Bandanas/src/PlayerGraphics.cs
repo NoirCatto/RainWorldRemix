@@ -256,7 +256,8 @@ public partial class Bandanas
         orig(self, newroom);
         if (!self.TryGetData(out var data)) return;
 
-        var graphics = (PlayerGraphics)self.graphicsModule;
+        var graphics = self.graphicsModule as PlayerGraphics;
+        if (graphics == null) return;
 
         for (var i = 0; i < 2; i++)
         {
