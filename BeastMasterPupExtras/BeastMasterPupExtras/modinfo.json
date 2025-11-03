@@ -1,0 +1,10 @@
+{
+  "id": "NoirCatto.BeastMasterPupExtras",
+  "name": "BeastMasterPupExtras",
+  "version": "1.0.4",
+  "authors": "NoirCatto",
+  "description": "Some fixes to SlugNPC (Slugpups) that annoyed me",
+  "requirements": ["moreslugcats", "fyre.BeastMaster"],
+  "requirements_names": ["More Slugcats Expansion", "BeastMaster"],
+  "checksum_override_version": true
+}
