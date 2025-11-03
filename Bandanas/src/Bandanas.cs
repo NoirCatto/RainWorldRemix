@@ -24,7 +24,6 @@ public partial class Bandanas : BaseUnityPlugin
         catch (Exception ex)
         {
             Logger.LogError(ex);
-            throw;
         }
     }
     private void OnEnable()

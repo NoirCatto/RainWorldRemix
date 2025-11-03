@@ -60,9 +60,6 @@
     <Reference Include="MonoMod.Utils">
       <HintPath>..\..\REFERENCES\MonoMod.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\REFERENCES\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Rewired_Core">
       <HintPath>..\..\REFERENCES\Rewired_Core.dll</HintPath>
     </Reference>
