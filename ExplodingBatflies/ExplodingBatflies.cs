@@ -34,7 +34,6 @@ public partial class ExplodingBatflies : BaseUnityPlugin
         catch (Exception ex)
         {
             Logger.LogError(ex);
-            throw;
         }
     }
     private void OnEnable()
@@ -58,7 +57,6 @@ public partial class ExplodingBatflies : BaseUnityPlugin
         catch (Exception ex)
         {
             Logger.LogError(ex);
-            throw;
         }
     }
     
