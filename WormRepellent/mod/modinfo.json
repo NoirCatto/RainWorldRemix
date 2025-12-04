@@ -1,0 +1,11 @@
+{
+  "id": "NoirCatto.WormRepellent",
+  "name": "WormRepellent",
+  "version": "1.0.0",
+  "authors": "NoirCatto",
+  "description": "Prevents garbage worms from stealing your spears.<LINE>Tribute to a legacy mod with the same name",
+  "requirements": [],
+  "requirements_names": [],
+  "tags": ["Game Mechanics", "Creatures"],
+  "checksum_override_version": true
+}
